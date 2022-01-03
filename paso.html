@@ -1,0 +1,46 @@
+
+<script>
+async function obtener_datos() {
+    try {
+        // bucamos los datos
+        const url =  await fetch('https://jsonplaceholder.typicode.com/photos');
+        
+        // desempaquetamos los datos
+        const fotos = await url.json();
+        
+        for (iterador of fotos) {
+            
+            //                    $("#cuadrofotos").append(`<div class=”col-3 p-3”><h3> ${iterador.id} ${iterador.title}</h3> <img class=”d-block w-100” src=${iterador.thumbnailUrl} alt="imagen"></div>`)
+            
+            $("#cuadrofotos").append(`
+            <div class="col-md-3 p-3">
+                <h3> ${iterador.id} ${iterador.title}</h3> 
+                <img class="d-block w-100" src="${iterador.thumbnailUrl}" alt="imagen">
+                </div>`)
+                
+                
+                if (iterador.id > 19) {
+                    break
+                }
+            }
+        } catch(error) {
+            console.log('Hay un error');
+            alert("hay un error")
+        }   
+    }
+    
+    // Funcion ejecuta una promesa
+    function iniciar() {
+        return new Promise ((resolve, reject) => {
+            setTimeout(() => {
+                obtener_datos();
+                resolve("Información Enviada");
+            }, 3000);
+        });
+    }
+    
+    // Ejecuto funcion, resolver promesa
+    iniciar().then(console.log);
+    
+    </script>
+    

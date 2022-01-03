@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="./assets/img/icon_51ddb4221b650d6ab1cf43f7c0e840a9.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <title>Desafío 2</title>
+    </head>
+    <body>
+        <div class="mx-auto w-25 mt-5">
+            <img src="./assets/img/1 J8O2xd9ZqxWr2x6EP4MHmg.png" alt="github" class="img-fluid">
+        </div>
+        <div class="container my-5">
+            <h1 class="text-center mb-4">Busqueda de Usuarios en GitHub y sus Repositorios</h1>
+            <div class="row" id="animales">
+
+            <div class="col-4">
+                <div class="card">
+                <img src="https://cnnespanol.cnn.com/wp-content/uploads/2021/11/oso-Bart.jpg?quality=100&strip=info" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Oso</h5>
+                    <p class="card-text">El Oso hace Grrrarr!</p>
+                </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        <hr>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            const animales = [
+                {
+                    especie: 'Perro',
+                    sonido: 'Guau',
+                    imagen: 'https://dbdzm869oupei.cloudfront.net/img/sticker/large/46888.jpg'
+                },
+                {
+                    especie: 'Vaca',
+                    sonido: 'Muuuu',
+                    imagen: 'https://storage.contextoganadero.com/s3fs-public/styles/noticias_one/public/ganaderia/field_image/2019-07/datos_curiosos.jpg?itok=K3YrNhVX'
+                },
+                {
+                    especie: 'Oveja',
+                    sonido: 'Behehehe',
+                    imagen: 'https://ichef.bbci.co.uk/news/640/cpsprodpb/44F8/production/_98665671_oveja.jpg'
+                },
+                {
+                    especie: 'Gato',
+                    sonido: 'Ñiiiaaaa',
+                    imagen: 'https://m.media-amazon.com/images/I/51dURaL8O9L._AC_SX466_.jpg'
+                }
+            ]
+
+            for (animal of animales) {
+            console.log(animal);
+
+            $('#animales').append(`
+                <div class="col-4">
+                <div class="card">
+                    <img src="${animal.imagen}" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">${animal.especie}</h5>
+                    <p class="card-text">El ${animal.especie} hace ${animal.sonido}</p>
+                    </div>
+                </div>
+                </div>
+            `)
+            }
+        </script>
+    </body>
+</html>
